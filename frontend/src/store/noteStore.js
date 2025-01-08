@@ -1,7 +1,7 @@
 import {create} from 'zustand'
 import axios from 'axios'
-import API_URL from "../utilities/config.js"
 
+const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000": "";
 axios.defaults.withCredentials = true;
 
 export const noteStore = create((set) => ({
