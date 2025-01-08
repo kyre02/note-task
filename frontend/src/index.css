@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --background: 255, 255, 255;
+    --text: 100, 116, 139;
+    --border: 229, 231, 235;
+    --card: 255, 255, 255;
+  }
+
+  .dark {
+    --background: 17, 24, 39;
+    --text: 148, 163, 184;
+    --border: 75, 85, 99;
+    --card: 31, 41, 55;
+  }
+  html {
+    @apply dark:bg-gradient-to-br from-[#0A112A] via-[#091a53] to-[#1b337e] text-text transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .main-btn {
+    @apply mt-5 w-full py-3 lg:text-xl bg-gradient-to-r from-[#2f79aa] via-[#2f79aa] to-bluecyan
+     text-white font-bold rounded-lg shadow-lg hover:from-[#6aa6ce] hover:to-bluecyan
+    focus:outline-none focus:ring-1 focus:ring-bluecyan focus:ring-offset-1 focus:ring-offset-blue-500;
+  }
+  .input-box {
+    @apply w-full pl-10 pr-3 py-2.5 border lg:text-xl dark:bg-gray-800/20 rounded-lg dark:border-gray-700 bg-gray-200 border-gray-300
+    dark:focus:border-bluecyan focus:border-bluecyan focus:outline-none text-text placeholder-gray-400 transition duration-300
+  }
+  .motion-div {
+    @apply sm:max-w-md lg:max-w-lg w-full border border-gray-300 dark:border-none dark:bg-gray-700/20 bg-gray-200/50 backdrop-filter backdrop-blur-xl rounded-2xl shadow-xl overflow-hidden transition duration-200
+  }
+  .h2-text {
+    @apply text-3xl font-bold mb-6 text-center bg-gradient-to-r from-[#6063aa] to-[#033742] dark:bg-gradient-to-r dark:from-[#C3C6FF] dark:to-[#AEF0FF] text-transparent bg-clip-text
+  }
+  .error-message {
+    @apply text-red-500 text-sm
+  }
+  
+  .success-message {
+    @apply text-green-500 text-sm
+  }
+}
+
